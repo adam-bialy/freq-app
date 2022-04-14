@@ -5,6 +5,9 @@ var index;
 var dirList;
 var freqList;
 
+$("button").prop("disabled", true)
+$("#start").prop("disabled", false)
+
 fetch("/xdirsxlistx").then(function(response) {
   return response.json()
 }).then(function(data) {
@@ -29,7 +32,12 @@ $("#start").on("click", function(event) {
     isOn = false
     index = sound.findTrack("sounds/440Hz.wav")
     sound.gotoTrack(index)
+    $("button").prop("disabled", false)
     $("#start").prop("disabled", true)
+    $("#volrange").prop("disabled", false)
+    $("#freqrange").prop("disabled", false)
+    $("#freqrange").prop("max", dirList.length-1)
+    $("#freqrange").prop("value", index)
   }
 })
 
@@ -47,20 +55,14 @@ $("#play").on("click", function(event) {
   }
 })
 
-$("#down").on("click", function(event) {
-  if (index > 0) {
-    index--
-    sound.gotoTrack(index)
-    console.log(index)
-  }
+$("#volrange").on("change", function(event) {
+  sound.setVolume(this.value/10)
 })
 
-$("#up").on("click", function(event) {
-  if (index < sound.getTracks().length-1) {
-    index++
-    sound.gotoTrack(index)
-    console.log(index)
-  }
+$("#freqrange").on("change", function(event) {
+  index = Number(this.value)
+  console.log(index)
+  sound.gotoTrack(index)
 })
 
 $("#report").on("click", function(event) {

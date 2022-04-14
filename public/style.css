@@ -5,6 +5,10 @@ body {
   text-align: center;
 }
 
+::selection {
+  background-color: #b285f7;
+}
+
 .container-fluid {
   width: 50%;
 }

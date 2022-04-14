@@ -4,6 +4,8 @@
 <head>
   <meta charset="utf-8">
   <title>Good Times Institute</title>
+  <!-- Favicon -->
+  <link rel="icon" href="icon.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -26,9 +28,13 @@
   </div>
 
   <div class="container-fluid buttons">
-    <button class="btn btn-lg btn-primary" type="button" name="button" id="down">Down</button>
     <button class="btn btn-lg btn-primary" type="button" name="button" id="play">SOUND ON</button>
-    <button class="btn btn-lg btn-primary" type="button" name="button" id="up">Up</button>
+  </div>
+  <div class="container-fluid">
+    <label for="volrange" class="form-label">Volume</label>
+    <input type="range" class="form-range" id="volrange" min=0 max=6 value=2 disabled>
+    <label for="freqrange" class="form-label">Frequency</label>
+    <input type="range" class="form-range" id="freqrange" min=0 disabled>
   </div>
 
   <div class="container-fluid buttons">
