@@ -9,23 +9,34 @@ body {
   background-color: #b285f7;
 }
 
-.container-fluid {
+.main-div {
   width: 50%;
+  margin: 1.5rem auto;
 }
 
-.heading {
-  padding: 20px 0 15px;
-  margin: auto;
+@media (max-width: 1200px) {
+  .main-div {
+    width: 70%;
+  }
+}
+
+@media (max-width: 1000px) {
+  .main-div {
+    width: 80%;
+  }
+}
+
+.container-fluid {
+  padding: 3% 0;
+}
+
+.row {
+  margin: 0;
 }
 
 p {
   margin: 4% 0 15px;
   line-height: 1.5rem;
-}
-
-.buttons {
-  padding: 1% 0;
-  margin: 0 auto;
 }
 
 .btn, .btn:active, .btn:focus, .btn:disabled {
@@ -36,7 +47,6 @@ p {
   border-color: #8843F2;
   box-shadow: 0 0.25rem 0.5rem #8843F2;
   border-radius: 0.25rem;
-  margin: 1% 1%;
 }
 
 .btn:hover {
@@ -50,15 +60,36 @@ p {
   border-width: 0 0 0.1rem;
 }
 
-.pressed, .pressed:focus, .pressed:hover, .pressed:active {
+.pressed, .pressed:focus, .pressed:active {
   background-color: #F47340;
   border-width: 0 0 0.1rem;
+}
+
+.pressed:hover {
+  background-color: #EF2F88;
 }
 
 #play {
   width: 10rem;
 }
 
-/* #up, #down {
-  display: none;
-} */
+.form-range {
+  margin: 1% 0 0;
+}
+
+.form-range::-webkit-slider-runnable-track, .form-range::-moz-range-track {
+  background: #F47340;
+}
+
+.form-range::-webkit-slider-thumb, .form-range::-moz-range-thumb {
+  background: #8843F2;
+}
+
+.name-input {
+  width: 50%;
+  margin: 0 auto;
+}
+
+
+/* The following color palette was used:
+https://colorhunt.co/palette/f9d371f47340ef2f888843f2 */

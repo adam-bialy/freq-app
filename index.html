@@ -18,28 +18,45 @@
 </head>
 
 <body>
+  <div class="main-div">
+    <div class="container-fluid">
+      <h1>Hearing frequency range test</h1>
+      <p>This application enables you to assess your hearing range. Click the button below to activate the app.
+        Using the "SOUND" button you can toggle the sound on or off, and you can use sliders to adjust the volume and frequency of the sound.
+        Once you adjust the frequency range on the slider to reflect your abilities, type in your name and generate a personal report.</p>
+      <button class="btn btn-lg btn-primary" type="button" name="button" id="start">Activate</button>
+    </div>
 
-  <div class="container-fluid heading">
-    <h1>Hearing frequency range test</h1>
-    <p>This application enables you to assess your hearing range. Click the button below to activate the app.
-      Using the "SOUND" button you can toggle the sound on or off, and you can use sliders to adjust the volume and frequency of the sound.
-      Once you adjust the frequency range on the slider to reflect your abilities, type in your name and generate a personal report.</p>
-    <button class="btn btn-lg btn-primary" type="button" name="button" id="start">Activate</button>
+    <div class="container-fluid">
+      <button class="btn btn-lg btn-primary" type="button" name="button" id="play">SOUND</button>
+    </div>
+    <div class="container-fluid">
+      <label for="volrange" class="form-label">Volume</label>
+      <input type="range" class="form-range" id="volrange" min=0 max=6 disabled>
+      <label for="freqrange" class="form-label">Frequency</label>
+      <input type="range" class="form-range" id="freqrange" min=0 disabled>
+      <br>
+      <h6>Start using slider to see the frequency</h6>
+    </div>
+
+    <div class="container-fluid row">
+      <div class="col-lg-2 lower">None</div>
+      <button class="btn btn-lg btn-primary col-lg-4 lower-button" type="button" name="button">Set lower limit</button>
+      <button class="btn btn-lg btn-primary col-lg-4 upper-button" type="button" name="button">Set upper limit</button>
+      <div class="col-lg-2 upper">None</div>
+    </div>
+
+    <div class="container-fluid buttons">
+      <input class="form-control name-input" type="text" name="" value="" placeholder="Enter your name...">
+      <button class="btn btn-lg btn-primary" type="button" name="button" id="report">Generate report</button>
+    </div>
   </div>
 
-  <div class="container-fluid buttons">
-    <button class="btn btn-lg btn-primary" type="button" name="button" id="play">SOUND ON</button>
-  </div>
-  <div class="container-fluid">
-    <label for="volrange" class="form-label">Volume</label>
-    <input type="range" class="form-range" id="volrange" min=0 max=6 value=2 disabled>
-    <label for="freqrange" class="form-label">Frequency</label>
-    <input type="range" class="form-range" id="freqrange" min=0 disabled>
-  </div>
-
-  <div class="container-fluid buttons">
-    <button class="btn btn-lg btn-primary" type="button" name="button" id="report">Generate report</button>
-  </div>
+  <!-- <div class="">
+    <form class="" action="/" method="post">
+      <button type="submit" name="button">Report</button>
+    </form>
+  </div> -->
 
 
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>

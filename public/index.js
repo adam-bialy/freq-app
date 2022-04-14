@@ -35,6 +35,7 @@ $("#start").on("click", function(event) {
     $("button").prop("disabled", false)
     $("#start").prop("disabled", true)
     $("#volrange").prop("disabled", false)
+    $("#volrange").prop("value", 2)
     $("#freqrange").prop("disabled", false)
     $("#freqrange").prop("max", dirList.length-1)
     $("#freqrange").prop("value", index)
@@ -45,12 +46,12 @@ $("#play").on("click", function(event) {
   if (isOn) {
     sound.stop()
     isOn = false
-    this.innerHTML = "SOUND ON"
+    // this.innerHTML = "SOUND ON"
     $("#play").toggleClass("pressed")
   } else {
     sound.play()
     isOn = true
-    this.innerHTML = "SOUND OFF"
+    // this.innerHTML = "SOUND OFF"
     $("#play").toggleClass("pressed")
   }
 })
@@ -61,15 +62,23 @@ $("#volrange").on("change", function(event) {
 
 $("#freqrange").on("change", function(event) {
   index = Number(this.value)
-  console.log(index)
   sound.gotoTrack(index)
+  $("h6").html(freqList[index] + " Hz")
+})
+
+$(".lower-button").on("click", function(event) {
+  $(".lower").html($("h6").text())
+})
+
+$(".upper-button").on("click", function(event) {
+  $(".upper").html($("h6").text())
 })
 
 $("#report").on("click", function(event) {
   var url = "https://freq-report.herokuapp.com/?"
-  var name = "A G"
-  var lower = "20"
-  var upper = "15000"
+  var name = $(".name-input").val()
+  var lower = $(".lower").text().split(" ")[0]
+  var upper = $(".upper").text().split(" ")[0]
   window.open(
     url + "name=" + name + "&lower=" + lower + "&upper=" + upper,
     "_blank"
