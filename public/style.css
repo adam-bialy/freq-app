@@ -1,0 +1,47 @@
+body {
+  font-family: "Montserrat";
+  background-color: #F9D371;
+  color: black;
+  text-align: center;
+}
+
+.heading {
+  width: 50%;
+  padding: 2% 0;
+  margin: auto;
+}
+
+p {
+  margin: 4% 0 4%;
+  line-height: 1.5rem;
+}
+
+.buttons {
+  width: 50%;
+  padding: 2%;
+  margin: 0 auto;
+}
+
+.btn, .btn:active, .btn:focus, .btn:hover, .btn:disabled {
+  transition-duration: 0.2s;
+  background-color: #F47340;
+  color: white;
+  border-width: 0 0 0.20rem;
+  border-color: #8843F2;
+  box-shadow: 0 0.25rem 0.25rem #8843F2;
+  border-radius: 0.25rem;
+  margin: 1% 1%;
+}
+
+.btn:disabled {
+  box-shadow: none;
+}
+
+.pressed, .pressed:focus, .pressed:hover, .pressed:active {
+  background-color: #F47340;
+  border-width: 0 0 0.05rem;
+}
+
+#play {
+  width: 10rem;
+}
