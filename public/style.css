@@ -5,43 +5,56 @@ body {
   text-align: center;
 }
 
-.heading {
+.container-fluid {
   width: 50%;
-  padding: 2% 0;
+}
+
+.heading {
+  padding: 20px 0 15px;
   margin: auto;
 }
 
 p {
-  margin: 4% 0 4%;
+  margin: 4% 0 15px;
   line-height: 1.5rem;
 }
 
 .buttons {
-  width: 50%;
-  padding: 2%;
+  padding: 1% 0;
   margin: 0 auto;
 }
 
-.btn, .btn:active, .btn:focus, .btn:hover, .btn:disabled {
-  transition-duration: 0.2s;
+.btn, .btn:active, .btn:focus, .btn:disabled {
+  transition-duration: 0.25s;
   background-color: #F47340;
   color: white;
-  border-width: 0 0 0.20rem;
+  border-width: 0 0 0.3rem;
   border-color: #8843F2;
-  box-shadow: 0 0.25rem 0.25rem #8843F2;
+  box-shadow: 0 0.25rem 0.5rem #8843F2;
   border-radius: 0.25rem;
   margin: 1% 1%;
 }
 
+.btn:hover {
+  background-color: #EF2F88;
+  box-shadow: 0 0.25rem 0.5rem #EF2F88;
+  border-color: #8843F2;
+}
+
 .btn:disabled {
   box-shadow: none;
+  border-width: 0 0 0.1rem;
 }
 
 .pressed, .pressed:focus, .pressed:hover, .pressed:active {
   background-color: #F47340;
-  border-width: 0 0 0.05rem;
+  border-width: 0 0 0.1rem;
 }
 
 #play {
   width: 10rem;
 }
+
+/* #up, #down {
+  display: none;
+} */

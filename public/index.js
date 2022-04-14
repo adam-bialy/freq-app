@@ -1,21 +1,34 @@
 var isSound = false;
 var isOn;
 var sound;
-const listOfSounds = [];
 var index;
+var dirList;
+var freqList;
+
+fetch("/xdirsxlistx").then(function(response) {
+  return response.json()
+}).then(function(data) {
+  dirList = data
+})
+
+fetch("/xfreqsxlistx").then(function(response) {
+  return response.json()
+}).then(function(data) {
+  freqList = data
+})
 
 $("#start").on("click", function(event) {
   if (!isSound) {
     sound = new Gapless5({
-      tracks: ["sounds/350Hz.wav", "sounds/400Hz.wav", "sounds/450Hz.wav", "sounds/500Hz.wav"],
+      tracks: dirList,
       loop: true,
       volume: 0.2,
       singleMode: true
     })
     isSound = true
     isOn = false
-    index = sound.findTrack("sounds/400Hz.wav")
-    sound.gotoTrack(1)
+    index = sound.findTrack("sounds/440Hz.wav")
+    sound.gotoTrack(index)
     $("#start").prop("disabled", true)
   }
 })
@@ -60,5 +73,3 @@ $("#report").on("click", function(event) {
     "_blank"
   );
 })
-
-$('#range').range('init');
