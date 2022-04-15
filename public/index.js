@@ -74,8 +74,11 @@ $(".upper-button").on("click", function(event) {
 $("#report").on("click", function(event) {
   var url = "https://freq-report.herokuapp.com/?"
   var name = $(".name-input").val()
+  $(".name-input").val("")
   var lower = $("#lower").val().split(" ")[0]
+  $("#lower").val("")
   var upper = $("#upper").val().split(" ")[0]
+  $("#upper").val("")
   window.open(
     url + "name=" + name + "&lower=" + lower + "&upper=" + upper,
     "_blank"
