@@ -62,17 +62,18 @@ $("#freqrange").on("change", function(event) {
 
 $(".lower-button").on("click", function(event) {
   // $("#lower").html($("h6").text())
-  $("#lower").val($("h5").text())
+  $("#lower").val($("h4").text())
   animate(".lower-button")
 })
 
 $(".upper-button").on("click", function(event) {
   // $("#upper").html($("h6").text())
-  $("#upper").val($("h5").text())
+  $("#upper").val($("h4").text())
   animate(".upper-button")
 })
 
 $("#report").on("click", function(event) {
+  animate("#report")
   var url = "https://freq-report.herokuapp.com/?"
   var name = $(".name-input").val()
   $(".name-input").val("")
@@ -108,5 +109,5 @@ function animate(button) {
 }
 
 function updateFreqLabel(index) {
-  $("h5").html(freqList[index] + " Hz")
+  $("h4").html(freqList[index] + " Hz")
 }
