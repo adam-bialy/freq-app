@@ -22,19 +22,21 @@ body {
 
 @media (max-width: 1000px) {
   .main-div {
-    width: 90%;
+    width: 80%;
   }
 }
 
 .container-fluid {
-  text-align: center;
-  margin: 2% auto;
-  padding: 1% 0;
+  padding: 3% 0;
+}
+
+.row {
+  margin: 0;
 }
 
 p {
+  margin: 4% 0 15px;
   line-height: 1.5rem;
-  margin: 3% auto;
 }
 
 .btn, .btn:active, .btn:focus, .btn:disabled {
@@ -71,21 +73,8 @@ p {
   width: 10rem;
 }
 
-.form-label {
-  font-weight: 600;
-}
-
-.row {
-  margin: auto 0;
-}
-
-.form-control {
-  text-align: center;
-  /* width: 7rem; */
-}
-
 .form-range {
-  margin: 0 auto 3%;
+  margin: 1% 0 0;
 }
 
 .form-range::-webkit-slider-runnable-track {
@@ -104,13 +93,9 @@ p {
   background: #8843F2;
 }
 
-.report {
-  padding: 0 15%;
-}
-
 .name-input {
-  /* width: 15rem; */
-  margin: 0 0 3%;
+  width: 50%;
+  margin: 0 auto;
 }
 
 

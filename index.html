@@ -10,7 +10,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Roboto&display=swap" rel="stylesheet">
 
   <!-- Stylesheets -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -22,31 +22,43 @@
     <div class="container-fluid">
       <h1>Hearing frequency range test</h1>
       <p>This application enables you to assess your hearing range. Click the button below to activate the app.
-        Using the "SOUND" button you can toggle the sound on or off, and you can use sliders to adjust the volume and frequency of the sound.
-        Once you adjust the frequency range on the slider to reflect your abilities, type in your name and generate a personal report.</p>
-      <button class="btn btn-lg btn-primary" type="button" name="button" id="start">Activate</button>
+        After that you can use the same button to toggle the sound on or off. Use sliders to adjust the volume and frequency of the sound.
+        Use buttons below the slider to fetch your threshold values. Once you are done, type in your name and generate a personal report.
+        We recommend using headphones.</p>
+      <button class="btn btn-lg btn-primary" type="button" name="button" id="play">ACTIVATE</button>
     </div>
 
-    <div class="container-fluid">
-      <button class="btn btn-lg btn-primary" type="button" name="button" id="play">SOUND</button>
-    </div>
+    <!-- <div class="container-fluid">
+      <button class="btn btn-lg btn-primary" type="button" name="button" id="play">SOUND OFF</button>
+    </div> -->
+
     <div class="container-fluid">
       <label for="volrange" class="form-label">Volume</label>
       <input type="range" class="form-range" id="volrange" min=0 max=6 disabled>
       <label for="freqrange" class="form-label">Frequency</label>
       <input type="range" class="form-range" id="freqrange" min=0 disabled>
       <br>
-      <h6>Start using slider to see the frequency</h6>
+      <h5>...</h5>
     </div>
 
-    <div class="container-fluid row">
-      <div class="col-lg-2 lower">None</div>
-      <button class="btn btn-lg btn-primary col-lg-4 lower-button" type="button" name="button">Set lower limit</button>
-      <button class="btn btn-lg btn-primary col-lg-4 upper-button" type="button" name="button">Set upper limit</button>
-      <div class="col-lg-2 upper">None</div>
+    <div class="container-fluid">
+      <div class="row row-cols-4">
+        <div class="col-lg-2 col-md-2 col-ls-2">
+          <input class="form-control" type="text" name="" value="" id="lower" disabled>
+        </div>
+        <div class="col-lg-4 col-md-4 col-ls-4">
+          <button class="btn btn-lg btn-primary lower-button" type="button" name="button">Set lower limit</button>
+        </div>
+        <div class="col-lg-4 col-md-4 col-ls-4">
+          <button class="btn btn-lg btn-primary upper-button" type="button" name="button">Set upper limit</button>
+        </div>
+        <div class="col-lg-2 col-md-2 col-ls-2">
+          <input class="form-control" type="text" name="" value="" id="upper" disabled>
+        </div>
+      </div>
     </div>
 
-    <div class="container-fluid buttons">
+    <div class="container-fluid report">
       <input class="form-control name-input" type="text" name="" value="" placeholder="Enter your name...">
       <button class="btn btn-lg btn-primary" type="button" name="button" id="report">Generate report</button>
     </div>
