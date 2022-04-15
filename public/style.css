@@ -37,8 +37,26 @@ p {
   margin: 3% auto;
 }
 
+h1 {
+  display: inline;
+  margin: 0 0.2rem;
+}
+
 h6 {
   margin: 0;
+}
+
+img {
+  height: 40px;
+  margin: 0 40px;
+}
+
+.fa-right {
+  margin-left: 0.8rem;
+}
+
+.fa-left {
+  margin-right: 0.8rem;
 }
 
 .btn, .btn:active, .btn:focus, .btn:disabled {
@@ -116,6 +134,14 @@ h6 {
   /* width: 15rem; */
   margin: 4% 0 3%;
 }
+
+hr {
+  margin: 4% 0;
+}
+
+/* .footer {
+  margin: 4% 0;
+} */
 
 
 /* The following color palette was used:

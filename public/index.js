@@ -6,6 +6,7 @@ var dirList;
 var freqList;
 
 $("button").prop("disabled", true)
+$(".form-range").prop("disabled", true)
 $("#play").prop("disabled", false)
 
 fetch("/xdirsxlistx").then(function(response) {
@@ -34,7 +35,7 @@ $("#play").on("click", function(event) {
     sound.gotoTrack(index)
     updateFreqLabel(index)
     $("button").prop("disabled", false)
-    $("#play").html("SOUND OFF")
+    $("#play").html("SOUND<i class='fa-solid fa-play fa-right'></i>")
     $("#volrange").prop("disabled", false)
     $("#volrange").prop("value", 2)
     $("#freqrange").prop("disabled", false)
@@ -89,12 +90,12 @@ function play() {
   if (isOn) {
     sound.stop()
     isOn = false
-    $("#play").html("SOUND OFF")
+    $("#play").html("SOUND<i class='fa-solid fa-play fa-right'></i>")
     $("#play").toggleClass("pressed")
   } else {
     sound.play()
     isOn = true
-    $("#play").html("SOUND ON")
+    $("#play").html("SOUND<i class='fa-solid fa-pause fa-right'></i>")
     $("#play").toggleClass("pressed")
   }
 }
