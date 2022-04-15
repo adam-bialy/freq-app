@@ -44,4 +44,6 @@ app.get("/xfreqsxlistx", function(req, res) {
 // })
 
 
-app.listen(3000)
+app.listen(3000, function() {
+  console.log("App started")
+})

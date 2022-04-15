@@ -11,7 +11,7 @@ body {
 
 .main-div {
   width: 50%;
-  margin: 1.5rem auto;
+  margin: 1rem auto;
 }
 
 @media (max-width: 1200px) {
@@ -28,13 +28,17 @@ body {
 
 .container-fluid {
   text-align: center;
-  margin: 2% auto;
+  margin: 1% auto;
   padding: 1% 0;
 }
 
 p {
   line-height: 1.5rem;
   margin: 3% auto;
+}
+
+h6 {
+  margin: 0;
 }
 
 .btn, .btn:active, .btn:focus, .btn:disabled {
@@ -110,7 +114,7 @@ p {
 
 .name-input {
   /* width: 15rem; */
-  margin: 0 0 3%;
+  margin: 4% 0 3%;
 }
 
 
