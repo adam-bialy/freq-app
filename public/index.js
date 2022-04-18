@@ -1,3 +1,4 @@
+// declare variables
 var isSound = false;
 var isOn;
 var sound;
@@ -5,10 +6,14 @@ var index;
 var dirList;
 var freqList;
 
+
+// set disable the form
 $("button").prop("disabled", true)
 $(".form-range").prop("disabled", true)
 $("#play").prop("disabled", false)
 
+
+// fetch list of files from backend
 fetch("/xdirsxlistx").then(function(response) {
   return response.json()
 }).then(function(data) {
@@ -21,6 +26,8 @@ fetch("/xfreqsxlistx").then(function(response) {
   freqList = data
 })
 
+
+// initialize sound object and form
 $("#play").on("click", function(event) {
   if (!isSound) {
     sound = new Gapless5({
@@ -46,9 +53,8 @@ $("#play").on("click", function(event) {
   }
 })
 
-// $("#play").on("click", function() {
-//   play()
-// })
+
+// add on-click functions to html elements
 
 $("#volrange").on("change", function(event) {
   sound.setVolume(this.value/10)
@@ -87,6 +93,8 @@ $("#report").on("click", function(event) {
   );
 })
 
+
+// play sound function
 function play() {
   if (isOn) {
     sound.stop()
@@ -101,6 +109,7 @@ function play() {
   }
 }
 
+// animate pressed button function
 function animate(button) {
   $(button).toggleClass("pressed")
   setTimeout(function(){
@@ -108,6 +117,7 @@ function animate(button) {
   }, 100)
 }
 
+// function for updating current frequency display
 function updateFreqLabel(index) {
   $("h4").html(freqList[index] + " Hz")
 }
