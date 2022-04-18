@@ -15,9 +15,6 @@ var freqs = files.map(x => x.split("Hz")[0])
 app = express();
 app.use(express.static("public"));
 
-// make an empty request to freq-report API to wake it up
-https.get("https://freq-report.herokuapp.com/")
-
 // set up routing
 app.get("/", function(req, res) {
   res.sendFile(__dirname + "/index.html")
@@ -33,3 +30,6 @@ app.get("/xfreqsxlistx", function(req, res) {
 
 // start the app
 app.listen(process.env.PORT || 3000, function() {})
+
+// make an empty request to freq-report API to wake it up
+https.get("https://freq-report.herokuapp.com/")
