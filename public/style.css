@@ -34,12 +34,15 @@ body {
 
 p {
   line-height: 1.5rem;
-  margin: 3% auto;
+  margin: 0.25rem auto;
 }
 
 h1 {
-  display: inline;
-  margin: 0 0.2rem;
+  margin: 0 0 0.25rem;
+}
+
+h5 {
+  margin: 0 0 1rem;
 }
 
 h6 {
@@ -48,7 +51,7 @@ h6 {
 
 img {
   height: 40px;
-  margin: 0 40px;
+  margin: 1.5rem 2.5rem 0;
 }
 
 .fa-right {
@@ -90,6 +93,7 @@ img {
 }
 
 #play {
+  margin: 1.5rem auto 1rem;
   width: 9rem;
 }
 
@@ -139,10 +143,14 @@ hr {
   margin: 4% 0;
 }
 
-/* .footer {
-  margin: 4% 0;
-} */
+a {
+  text-decoration: none;
+  color: black;
+}
 
+a:hover {
+  color: #8843F2;
+}
 
 /* The following color palette was used:
 https://colorhunt.co/palette/f9d371f47340ef2f888843f2 */
