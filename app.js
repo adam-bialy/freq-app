@@ -4,12 +4,12 @@ const fs = require("fs");
 const https = require("https");
 
 // load file names
-var files = fs.readdirSync(__dirname + "/public/sounds").slice(1);
+let files = fs.readdirSync(__dirname + "/public/sounds").slice(1);
 files.sort(function(a, b) {
   return Number(a.split("Hz")[0]) - Number(b.split("Hz")[0])
 });
-var dirs = files.map(x => "sounds/" + x)
-var freqs = files.map(x => x.split("Hz")[0])
+let dirs = files.map(x => "sounds/" + x)
+let freqs = files.map(x => x.split("Hz")[0])
 
 // initialize app
 app = express();

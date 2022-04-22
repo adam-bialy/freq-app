@@ -1,10 +1,10 @@
 // declare variables
-var isSound = false;
-var isOn;
-var sound;
-var index;
-var dirList;
-var freqList;
+let isSound = false;
+let isOn;
+let sound;
+let index;
+let dirList;
+let freqList;
 
 
 // set disable the form
@@ -80,12 +80,12 @@ $(".upper-button").on("click", function(event) {
 
 $("#report").on("click", function(event) {
   animate("#report")
-  var url = "https://freq-report.herokuapp.com/?"
-  var name = $(".name-input").val()
+  let url = "https://freq-report.herokuapp.com/?"
+  let name = $(".name-input").val()
   $(".name-input").val("")
-  var lower = $("#lower").val().split(" ")[0]
+  let lower = $("#lower").val().split(" ")[0]
   $("#lower").val("")
-  var upper = $("#upper").val().split(" ")[0]
+  let upper = $("#upper").val().split(" ")[0]
   $("#upper").val("")
   window.open(
     url + "name=" + name + "&lower=" + lower + "&upper=" + upper,
