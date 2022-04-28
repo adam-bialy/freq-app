@@ -48,10 +48,12 @@
       <h4>...</h4>
     </div>
 
+    <form class="" action="/" method="post" target="_blank">
     <div class="container-fluid">
       <div class="row row-cols-4">
         <div class="col-lg-2 col-md-2 col-ls-2">
           <input class="form-control" type="text" name="" value="" id="lower" disabled>
+          <input type="hidden" name="fLower" value="" id="lowerInput">
         </div>
         <div class="col-lg-4 col-md-4 col-ls-4">
           <button class="btn btn-lg btn-primary lower-button" type="button" name="button"><i class="fa-regular fa-circle-down fa-left"></i>Set lower limit</button>
@@ -61,19 +63,21 @@
         </div>
         <div class="col-lg-2 col-md-2 col-ls-2">
           <input class="form-control" type="text" name="" value="" id="upper" disabled>
+          <input type="hidden" name="fUpper" value="" id="upperInput">
         </div>
       </div>
     </div>
 
     <div class="container-fluid report">
-      <input class="form-control name-input" type="text" name="" value="" placeholder="Enter your name...">
-      <button class="btn btn-lg btn-primary" type="button" name="button" id="report">Generate report<i class="fa-solid fa-certificate fa-right"></i></button>
+        <input class="form-control name-input" type="text" name="fName" value="" placeholder="Enter your name...">
+        <button class="btn btn-lg btn-primary" type="submit" name="button" id="report">Generate report<i class="fa-solid fa-certificate fa-right"></i></button>
     </div>
+    </form>
 
     <hr>
 
     <div class="containter-fluid footer">
-      <h6>© 2022 <a href="https://adamgrzelak.com/">Adam Grzelak</a></h6>
+      <h6>© 2022 <a href="https://adamgrzelak.com/" target="_blank">Adam Grzelak</a></h6>
     </div>
 
   </div>

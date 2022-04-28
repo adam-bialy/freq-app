@@ -69,28 +69,26 @@ $("#freqrange").on("change", function(event) {
 $(".lower-button").on("click", function(event) {
   // $("#lower").html($("h6").text())
   $("#lower").val($("h4").text())
+  $("#lowerInput").val($("h4").text().split(" ")[0])
   animate(".lower-button")
 })
 
 $(".upper-button").on("click", function(event) {
   // $("#upper").html($("h6").text())
   $("#upper").val($("h4").text())
+  $("#upperInput").val($("h4").text().split(" ")[0])
   animate(".upper-button")
 })
 
 $("#report").on("click", function(event) {
   animate("#report")
-  let url = "https://freq-report.herokuapp.com/?"
-  let name = $(".name-input").val()
-  $(".name-input").val("")
-  let lower = $("#lower").val().split(" ")[0]
-  $("#lower").val("")
-  let upper = $("#upper").val().split(" ")[0]
-  $("#upper").val("")
-  window.open(
-    url + "name=" + name + "&lower=" + lower + "&upper=" + upper,
-    "_blank"
-  );
+  setTimeout(function(){
+    $(".name-input").val("")
+    $("#lower").val("")
+    $("#upper").val("")
+    $("#lowerInput").val("")
+    $("#upperInput").val("")
+  }, 100)
 })
 
 
