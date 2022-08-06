@@ -37,7 +37,7 @@ app.post("/", function(req, res) {
   const name = req.body.fName
   const lower = req.body.fLower
   const upper = req.body.fUpper
-  const python = spawn("venv/bin/python", ["certificate.py", name, lower, upper])
+  const python = spawn("python", ["certificate.py", name, lower, upper])
 
   python.stdout.on("data", function(data) {
     let file = data.toString().trim()
