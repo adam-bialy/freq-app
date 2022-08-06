@@ -2,6 +2,8 @@
 const express = require("express");
 const fs = require("fs");
 const bodyParser = require("body-parser");
+const spawn = require("child_process").spawn;
+const util = require("util");
 
 // load file names
 let files = fs.readdirSync(__dirname + "/public/sounds").slice(1);
@@ -35,8 +37,28 @@ app.post("/", function(req, res) {
   const name = req.body.fName
   const lower = req.body.fLower
   const upper = req.body.fUpper
-  const url = "https://freq-report.herokuapp.com/?" + "name=" + name + "&lower=" + lower + "&upper=" + upper
-  res.redirect(url)
+  const python = spawn("venv/bin/python", ["certificate.py", name, lower, upper])
+
+  python.stdout.on("data", function(data) {
+    let file = data.toString().trim()
+    res.download(file, function() {
+      fs.unlink(file, function(err) {
+        if (err) {
+          console.log(err);
+        }
+      })
+    })
+  })
+  python.stderr.on("data", function(data) {
+    let error = data.toString()
+    res.send(error)
+    console.log(error)
+  })
+  python.on("close", function() {
+    console.log("Success")
+  })
+  //  const url = "https://freq-report.herokuapp.com/?" + "name=" + name + "&lower=" + lower + "&upper=" + upper
+  //  res.redirect(url)
 })
 
 // start the app
