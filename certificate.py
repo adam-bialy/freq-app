@@ -1,9 +1,10 @@
-from fpdf import FPDF
-from datetime import datetime
 import os
 import string
-from random import choice
 import sys
+from datetime import datetime
+from random import choice
+
+from fpdf import FPDF
 
 
 class Certificate:
@@ -11,9 +12,8 @@ class Certificate:
     Generator of hearing range certificates.
     Requires name, and lower and upper boundaries.
     """
-    chars = string.ascii_lowercase \
-            + string.ascii_uppercase \
-            + string.digits
+
+    chars = string.ascii_lowercase + string.ascii_uppercase + string.digits
 
     def __init__(self, username, low, high):
         self.id = "".join(choice(self.chars) for _ in range(16))
@@ -49,8 +49,17 @@ class Certificate:
 
         # insert results
         pdf.set_font(family="Times", size=24, style="I")
-        pdf.cell(w=0, h=30, txt="has completed an online hearing test", border=0, align="C", ln=1)
-        pdf.cell(w=0, h=30, txt="with the following results:", border=0, align="C", ln=1)
+        pdf.cell(
+            w=0,
+            h=30,
+            txt="has completed an online hearing test",
+            border=0,
+            align="C",
+            ln=1,
+        )
+        pdf.cell(
+            w=0, h=30, txt="with the following results:", border=0, align="C", ln=1
+        )
         pdf.cell(w=0, h=50, border=0, align="C", ln=1)
 
         # insert table head
@@ -70,7 +79,14 @@ class Certificate:
         pdf.cell(w=0, h=30, txt="Date issued:", border=0, align="C", ln=1)
         pdf.cell(w=0, h=5, border=0, align="C", ln=1)
         pdf.set_font(family="Times", size=24)
-        pdf.cell(w=0, h=30, txt=datetime.now().strftime("%d/%m/%Y"), border=0, align="C", ln=1)
+        pdf.cell(
+            w=0,
+            h=30,
+            txt=datetime.now().strftime("%d/%m/%Y"),
+            border=0,
+            align="C",
+            ln=1,
+        )
         pdf.cell(w=0, h=30, border=0, align="C", ln=1)
 
         # save report to file

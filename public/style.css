@@ -1,12 +1,12 @@
 body {
   font-family: "Montserrat";
-  background-color: #F9D371;
+  background-color: #f9d371;
   color: black;
   text-align: center;
 }
 
 ::selection {
-  background-color: #B285F7;
+  background-color: #b285f7;
 }
 
 .main-div {
@@ -62,20 +62,23 @@ img {
   margin-right: 0.8rem;
 }
 
-.btn, .btn:active, .btn:focus, .btn:disabled {
+.btn,
+.btn:active,
+.btn:focus,
+.btn:disabled {
   transition-duration: 0.25s;
-  background-color: #F47340;
+  background-color: #f47340;
   color: white;
   border-width: 0 0 0.3rem;
-  border-color: #8843F2;
-  box-shadow: 0 0.25rem 0.5rem #8843F2;
+  border-color: #8843f2;
+  box-shadow: 0 0.25rem 0.5rem #8843f2;
   border-radius: 0.25rem;
 }
 
 .btn:hover {
-  background-color: #EF2F88;
-  box-shadow: 0 0.25rem 0.5rem #EF2F88;
-  border-color: #8843F2;
+  background-color: #ef2f88;
+  box-shadow: 0 0.25rem 0.5rem #ef2f88;
+  border-color: #8843f2;
 }
 
 .btn:disabled {
@@ -83,13 +86,15 @@ img {
   border-width: 0 0 0.1rem;
 }
 
-.pressed, .pressed:focus, .pressed:active {
-  background-color: #F47340;
+.pressed,
+.pressed:focus,
+.pressed:active {
+  background-color: #f47340;
   border-width: 0 0 0.1rem;
 }
 
 .pressed:hover {
-  background-color: #EF2F88;
+  background-color: #ef2f88;
 }
 
 #play {
@@ -115,19 +120,19 @@ img {
 }
 
 .form-range::-webkit-slider-runnable-track {
-  background: #F47340;
+  background: #f47340;
 }
 
 .form-range::-moz-range-track {
-  background: #F47340;
+  background: #f47340;
 }
 
 .form-range::-webkit-slider-thumb {
-  background: #8843F2;
+  background: #8843f2;
 }
 
 .form-range::-moz-range-thumb {
-  background: #8843F2;
+  background: #8843f2;
 }
 
 .report {
@@ -149,7 +154,7 @@ a {
 }
 
 a:hover {
-  color: #8843F2;
+  color: #8843f2;
 }
 
 /* The following color palette was used:
